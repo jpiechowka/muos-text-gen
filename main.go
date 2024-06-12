@@ -81,6 +81,8 @@ func main() {
 // Each description file includes the game's name, release date, manufacturer, and description.
 // Encountered errors stop the execution.
 func generateGameDescriptionsForMuOS(xmlData []byte) {
+	processedCtr := 0
+
 	// Reading XML data
 	var datafile Datafile
 	err := xml.Unmarshal(xmlData, &datafile)
@@ -111,6 +113,8 @@ func generateGameDescriptionsForMuOS(xmlData []byte) {
 			log.Fatalf("Cannot write to file %v: %v\n", gameDescFilePath, err)
 		}
 
+		processedCtr++
+
 		err = gameDescFile.Close()
 		if err != nil {
 			log.Fatalf("Cannot close file %v: %v\n", gameDescFilePath, err)
@@ -118,4 +122,6 @@ func generateGameDescriptionsForMuOS(xmlData []byte) {
 
 		log.Printf("Generated description for %v in: %v\n", game.Name, gameDescFilePath)
 	}
+
+	log.Printf("Finished generating description for %v games\n", processedCtr)
 }
