@@ -3,7 +3,6 @@ name: Build and publish assets
 on:
   workflow_run:
     workflows: [ "Create release" ]
-    branches: [ master ]
     types: [ completed ]
 
 permissions:
