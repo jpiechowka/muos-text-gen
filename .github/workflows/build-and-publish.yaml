@@ -1,17 +1,25 @@
 name: Build and publish assets
 
 on:
-  workflow_run:
-    workflows: [ "Create release" ]
-    types: [ completed ]
+  push:
+    tags:
+      - 'v*.*.*'
 
 permissions:
   contents: write
   packages: write
 
 jobs:
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Release
+        uses: softprops/action-gh-release@v2
   releases-matrix:
-    name: Release Go Binary
+    name: Build Go Binaries
     runs-on: ubuntu-latest
     strategy:
       matrix:
