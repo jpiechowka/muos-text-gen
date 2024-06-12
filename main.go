@@ -101,7 +101,10 @@ func generateGameDescriptionsForMuOS(xmlData []byte) {
 	// Creating descriptions and writing to a file (based on the ROM name)
 	for _, game := range datafile.Game {
 		log.Printf("Generating description for: %v\n", game.Name)
-		gameDescFilePath := fmt.Sprintf("%v/%v.txt", OutputDirectoryName, game.ROM.Name)
+
+		// Strip extension from the ROM name (for example .gba)
+		outputFileName := game.ROM.Name[:strings.LastIndex(game.ROM.Name, ".")]
+		gameDescFilePath := fmt.Sprintf("%v/%v.txt", OutputDirectoryName, outputFileName)
 
 		gameDescFile, err := os.Create(gameDescFilePath)
 		if err != nil {
@@ -123,5 +126,5 @@ func generateGameDescriptionsForMuOS(xmlData []byte) {
 		log.Printf("Generated description for %v in: %v\n", game.Name, gameDescFilePath)
 	}
 
-	log.Printf("Finished generating description for %v games\n", processedCtr)
+	log.Printf("Finished generating description for %v game/s\n", processedCtr)
 }
