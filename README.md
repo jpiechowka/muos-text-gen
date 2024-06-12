@@ -11,6 +11,15 @@ A little utility to generate text descriptions for muOS for games scraped with S
 3. Run the binary (it will create `text` directory in the folder the binary was run)
 4. Follow the guide here to copy your text descriptions https://muos.dev/help/addcontent
 
+## Example generated description
+```
+Name: Advance Wars
+Release Date: 2002
+Manufacturer: Nintendo
+
+Description: The battle lines have been drawn, and an elite group of sly strategists is massing troops at your borders. You'll have to command ground, air and naval forces if you hope to survive the coming wars, and it won't be easy. With 114 maps to battle on and both the Single-Pak and Multi-Pak link modes, Advance Wars brings turn-based strategy to a depth never before seen on a handheld!
+```
+
 ## Sample run
 ```
 2024/06/12 16:14:12.788672 main.go:51: Current operation directory: D:\Roms\Nintendo - Game Boy Advance
