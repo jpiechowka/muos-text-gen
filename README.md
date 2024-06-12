@@ -25,7 +25,7 @@ Description: The battle lines have been drawn, and an elite group of sly strateg
 
 ### Screenshot
 
-![](readme-assets\muOS desc.png)
+![muOS](readme-assets/muOS-desc.png)
 
 ## Sample run
 
