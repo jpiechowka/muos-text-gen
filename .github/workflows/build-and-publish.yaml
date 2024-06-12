@@ -19,6 +19,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
   releases-matrix:
+    needs: create-release
     name: Build Go Binaries
     runs-on: ubuntu-latest
     strategy:
