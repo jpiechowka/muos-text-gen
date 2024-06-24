@@ -4,6 +4,7 @@ A little utility to generate text descriptions for muOS for games scraped with S
 
 * https://muos.dev/
 * https://muos.dev/help/addcontent
+* https://muos.dev/help/artwork
 
 ## Usage
 
